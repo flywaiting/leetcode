@@ -7,7 +7,11 @@ import (
 func main() {
 	fmt.Println("hello go for leetcode")
 
-	removeDuplicateLetters2("cbacdcbc")
+	// removeDuplicateLetters2("cbacdcbc")
+	s := "abcd"
+	for ch := range s {
+		fmt.Println(ch)
+	}
 }
 
 func removeDuplicateLetters2(s string) string {
