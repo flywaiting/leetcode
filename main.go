@@ -7,42 +7,26 @@ import (
 func main() {
 	fmt.Println("hello go for leetcode")
 
-	// removeDuplicateLetters2("cbacdcbc")
-	s := "abcd"
-	for ch := range s {
-		fmt.Println(ch)
-	}
+	s := []int{1, 0, 0, 0, 0}
+	canPlaceFlowers(s, 2)
 }
-
-func removeDuplicateLetters2(s string) string {
-	n := len(s)
-	if n <= 1 {
-		return s
+func canPlaceFlowers(flowerbed []int, n int) bool {
+	size := len(flowerbed)
+	if 2*n > size+1 {
+		return false
 	}
 
-	arr := [26]int{}
-	for i := 0; i < n; i++ {
-		arr[s[i]-'a']++
-	}
-
-	res := make([]byte, 0, 26)
-	rcdList := [26]int{}
-	for i := 0; i < n; i++ {
-		last := len(res) - 1
-		for last >= 0 && rcdList[s[i]-'a'] == 0 && arr[res[last]-'a'] > 0 && res[last] > s[i] {
-			rcdList[res[last]-'a'] = 0
-			res = res[:last]
-			last--
+	pre, cnt := -1, 0
+	for i, v := range flowerbed {
+		if v == 1 {
+			cnt += (i - pre - 2 + 1) / 2
+			pre = i + 1
+			fmt.Println(cnt, i)
 		}
-
-		fmt.Println(last, string(s[i]), string(res))
-
-		arr[s[i]-'a']--
-		if last < 0 || rcdList[s[i]-'a'] == 0 {
-			res = append(res, s[i])
-			rcdList[s[i]-'a'] = 1
-		}
-		fmt.Println(string(res))
 	}
-	return string(res)
+
+	// cnt += (size - pre - 2 + 1) / 2
+	// return cnt >= n
+	fmt.Println(cnt)
+	return cnt >= n
 }
