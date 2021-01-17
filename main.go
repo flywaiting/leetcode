@@ -7,8 +7,11 @@ import (
 func main() {
 	fmt.Println("hello go for leetcode")
 
-	s := []int{1, 0, 0, 0, 0}
-	canPlaceFlowers(s, 2)
+	// s := []int{1, 0, 0, 0, 0}
+	// canPlaceFlowers(s, 2)
+
+	i, j := 10, i-2
+	fmt.Println(i, j)
 }
 func canPlaceFlowers(flowerbed []int, n int) bool {
 	size := len(flowerbed)
