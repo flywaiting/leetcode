@@ -2,34 +2,63 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 )
 
 func main() {
 	fmt.Println("hello go for leetcode")
 
-	s := []int{1, 2, 0, 0}
-	// canPlaceFlowers(s, 2)
-
-	addToArrayForm(s, 9000)
-
-	fmt.Println([]int{123})
+	rs := Constructor()
+	fmt.Println("i:", rs.Insert(0))
+	fmt.Println("i:", rs.Insert(1))
+	fmt.Println("r:", rs.Remove(0))
+	fmt.Println("i:", rs.Insert(2))
+	fmt.Println("r:", rs.Remove(1))
+	fmt.Println(rs.GetRandom())
 }
 
-func addToArrayForm(A []int, K int) []int {
-	if K == 0 {
-		return A
-	}
-	tmp := 0
-	for _, v := range A {
-		tmp = v + tmp*10
-	}
-	fmt.Println(tmp)
-	tmp += K
+type RandomizedSet struct {
+	dict map[int]int
+	arr  []int
+}
 
-	ans := make([]int, 0, len(A))
-	for ; tmp > 0; tmp /= 10 {
-		ans = append(ans, tmp%10)
-		fmt.Println(ans, tmp)
+/** Initialize your data structure here. */
+func Constructor() RandomizedSet {
+	return RandomizedSet{
+		make(map[int]int), []int{},
 	}
-	return ans
+}
+
+/** Inserts a value to the set. Returns true if the set did not already contain the specified element. */
+func (this *RandomizedSet) Insert(val int) bool {
+	if _, has := this.dict[val]; has {
+		return false
+	}
+	this.dict[val] = len(this.arr)
+	this.arr = append(this.arr, val)
+	return true
+}
+
+/** Removes a value from the set. Returns true if the set contained the specified element. */
+func (this *RandomizedSet) Remove(val int) bool {
+	if idx, has := this.dict[val]; has {
+		last := len(this.arr) - 1
+		this.arr[idx], this.arr[last] = this.arr[last], this.arr[idx]
+		this.dict[this.arr[idx]] = idx
+		delete(this.dict, val)
+		this.arr = this.arr[:last]
+
+		fmt.Println(val)
+		fmt.Println(this.dict)
+		fmt.Println(this.arr)
+
+		return true
+	}
+	return false
+}
+
+/** Get a random element from the set. */
+func (this *RandomizedSet) GetRandom() int {
+	fmt.Println(this.arr)
+	return this.arr[rand.Intn(len(this.arr))]
 }
