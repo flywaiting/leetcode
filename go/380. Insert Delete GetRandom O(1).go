@@ -2,44 +2,45 @@ package leetcode
 
 import "math/rand"
 
+// RandomizedSet 随机set集合
 type RandomizedSet struct {
 	dict map[int]int
 	arr  []int
 }
 
-/** Initialize your data structure here. */
+// Constructor Initialize your data structure here. */
 func Constructor() RandomizedSet {
 	return RandomizedSet{
 		make(map[int]int), []int{},
 	}
 }
 
-/** Inserts a value to the set. Returns true if the set did not already contain the specified element. */
-func (this *RandomizedSet) Insert(val int) bool {
-	if _, has := this.dict[val]; has {
+// Insert Inserts a value to the set. Returns true if the set did not already contain the specified element. */
+func (rs *RandomizedSet) Insert(val int) bool {
+	if _, has := rs.dict[val]; has {
 		return false
 	}
-	this.dict[val] = len(this.arr)
-	this.arr = append(this.arr, val)
+	rs.dict[val] = len(rs.arr)
+	rs.arr = append(rs.arr, val)
 	return true
 }
 
-/** Removes a value from the set. Returns true if the set contained the specified element. */
-func (this *RandomizedSet) Remove(val int) bool {
-	if idx, has := this.dict[val]; has {
-		last := len(this.arr) - 1
-		this.arr[idx], this.arr[last] = this.arr[last], this.arr[idx]
-		this.dict[this.arr[idx]] = idx
-		delete(this.dict, val)
-		this.arr = this.arr[:last]
+// Remove Removes a value from the set. Returns true if the set contained the specified element. */
+func (rs *RandomizedSet) Remove(val int) bool {
+	if idx, has := rs.dict[val]; has {
+		last := len(rs.arr) - 1
+		rs.arr[idx], rs.arr[last] = rs.arr[last], rs.arr[idx]
+		rs.dict[rs.arr[idx]] = idx
+		delete(rs.dict, val)
+		rs.arr = rs.arr[:last]
 		return true
 	}
 	return false
 }
 
-/** Get a random element from the set. */
-func (this *RandomizedSet) GetRandom() int {
-	return this.arr[rand.Intn(len(this.arr))]
+// GetRandom Get a random element from the set. */
+func (rs *RandomizedSet) GetRandom() int {
+	return rs.arr[rand.Intn(len(rs.arr))]
 }
 
 /**
