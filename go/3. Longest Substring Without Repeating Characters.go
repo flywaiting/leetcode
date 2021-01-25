@@ -1,6 +1,7 @@
 package leetcode
 
-func lengthOfLongestSubstring(s string) int {
+// lengthOfLongestSubstring
+func sizeOfLongestSubstring(s string) int {
 	m := make([]int, 128)
 	ans, head := 0, 0
 	for i, c := range s {

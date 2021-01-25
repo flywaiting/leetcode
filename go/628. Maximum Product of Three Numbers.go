@@ -1,29 +1,28 @@
 package leetcode
 
+import "sort"
+
 func maximumProduct(nums []int) int {
-	arr := []int{nums[0], nums[1], nums[2]}
-	idx := minIdx(arr)
-	for _, v := range nums[3:] {
-		if v > arr[idx] {
-			arr[idx] = v
-			idx = minIdx(arr)
-		}
+	sort.Ints(nums)
+	n := len(nums)
+	if nums[0] >= 0 {
+		return nums[n-1] * nums[n-2] * nums[n-3]
 	}
-	return arr[0] * arr[1] * arr[2]
+
+	h := nums[0] * nums[1] * nums[n-1]
+	t := nums[n-1] * nums[n-2] * nums[n-3]
+	if h > t {
+		return h
+	}
+	return t
 }
 
-func minIdx(nums []int) int {
-	idx := 0
-	for i, v := range nums {
-		if v < nums[idx] {
-			idx = i
-		}
-	}
-	return idx
-}
+// N/A
+// 获取数组的前3个值, 然后, 就错了
+// 问题点: 负负得正
 
-// 用数组保存最大的三个值, 并记录其中最小值的下标
-// 遍历原数组, 于保存数组比较
-// 若大于其中的最小值, 则更新保存数组和最小值下标
+// 暴力
+// 排序, 取前后的最大值
 
-// ! N/A	负负得正...
+// 提升
+// 3个最大值的基础上, 收集2个最小值		=>	线性扫描

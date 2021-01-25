@@ -1,21 +1,6 @@
-package main
+package leetcode
 
-import (
-	"fmt"
-	"math/rand"
-)
-
-func main() {
-	fmt.Println("hello go for leetcode")
-
-	rs := Constructor()
-	fmt.Println("i:", rs.Insert(0))
-	fmt.Println("i:", rs.Insert(1))
-	fmt.Println("r:", rs.Remove(0))
-	fmt.Println("i:", rs.Insert(2))
-	fmt.Println("r:", rs.Remove(1))
-	fmt.Println(rs.GetRandom())
-}
+import "math/rand"
 
 type RandomizedSet struct {
 	dict map[int]int
@@ -47,11 +32,6 @@ func (this *RandomizedSet) Remove(val int) bool {
 		this.dict[this.arr[idx]] = idx
 		delete(this.dict, val)
 		this.arr = this.arr[:last]
-
-		fmt.Println(val)
-		fmt.Println(this.dict)
-		fmt.Println(this.arr)
-
 		return true
 	}
 	return false
@@ -59,6 +39,22 @@ func (this *RandomizedSet) Remove(val int) bool {
 
 /** Get a random element from the set. */
 func (this *RandomizedSet) GetRandom() int {
-	fmt.Println(this.arr)
 	return this.arr[rand.Intn(len(this.arr))]
 }
+
+/**
+ * Your RandomizedSet object will be instantiated and called as such:
+ * obj := Constructor();
+ * param_1 := obj.Insert(val);
+ * param_2 := obj.Remove(val);
+ * param_3 := obj.GetRandom();
+ */
+
+//  想要实现常数时间的插入, 删除操作, 哈希表是首选
+
+// !	learn:
+// golang 的 map 没有随机方法, 也没办法直接获取 key/val 列表, 需要额外维护
+// 维护 slice, 方便获取随机值
+// 维护 map, 映射 slice 的索引
+// 让 slice 作为类 stack 使用, 提高 remove 操作的性能, 【将待删除值与切片末尾交换, 然后去除末尾】
+// notice 交换之后, map 对应值要一起改变, 不然就GG
