@@ -6,6 +6,7 @@ import (
 )
 
 func main() {
-	num := glc.LongestCommonSubsequence("abcd", "aaa")
-	fmt.Println(num)
+	a := []int{3, 3, 3, 3, 3}
+	v := glc.NumRabbits(a)
+	fmt.Println(v)
 }
