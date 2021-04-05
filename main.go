@@ -9,5 +9,5 @@ func main() {
 
 	fmt.Println("a")
 
-	fmt.Println(glc.MaxSubArray([]int{-2, 1, -3, 4, -1, 2, 1, -5, 4}))
+	fmt.Println(glc.UP62(7, 3))
 }
