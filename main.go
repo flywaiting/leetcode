@@ -6,8 +6,11 @@ import (
 )
 
 func main() {
-	a := []int{1, 2, 3, 0, 0, 0}
-	b := []int{2, 5, 6}
-	glc.Merge(a, b, 3, 3)
-	fmt.Println(a)
+
+	fmt.Println("a")
+
+	fmt.Println(glc.LongestPalindrome("babad"))
+	fmt.Println(glc.LongestPalindrome("cbbd"))
+	fmt.Println(glc.LongestPalindrome("a"))
+	fmt.Println(glc.LongestPalindrome("acacbabc"))
 }
