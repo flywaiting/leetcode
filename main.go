@@ -6,7 +6,8 @@ import (
 )
 
 func main() {
-	a := []int{3, 3, 3, 3, 3}
-	v := glc.NumRabbits(a)
-	fmt.Println(v)
+	a := []int{1, 2, 3, 0, 0, 0}
+	b := []int{2, 5, 6}
+	glc.Merge(a, b, 3, 3)
+	fmt.Println(a)
 }
