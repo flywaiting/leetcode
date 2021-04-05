@@ -9,8 +9,5 @@ func main() {
 
 	fmt.Println("a")
 
-	fmt.Println(glc.LongestPalindrome("babad"))
-	fmt.Println(glc.LongestPalindrome("cbbd"))
-	fmt.Println(glc.LongestPalindrome("a"))
-	fmt.Println(glc.LongestPalindrome("acacbabc"))
+	fmt.Println(glc.MaxSubArray([]int{-2, 1, -3, 4, -1, 2, 1, -5, 4}))
 }
