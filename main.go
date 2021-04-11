@@ -7,7 +7,5 @@ import (
 
 func main() {
 
-	fmt.Println("a")
-
-	fmt.Println(glc.UP62(7, 3))
+	fmt.Println(glc.RD80([]int{0, 0, 0, 0, 1, 1, 1, 1, 2, 3, 3}))
 }
