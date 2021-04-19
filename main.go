@@ -7,8 +7,7 @@ import (
 
 func main() {
 
-	// fmt.Println(glc.RD80([]int{0, 0, 0, 0, 1, 1, 1, 1, 2, 3, 3}))
-
-	fmt.Println(glc.RD26([]int{0, 0, 1, 1, 1, 2, 2, 3, 3, 4}))
-	fmt.Println(glc.RD26([]int{}))
+	fmt.Println(glc.R213([]int{3, 4, 5}))
+	fmt.Println(glc.R213([]int{4, 1, 2, 7, 5, 3, 1}))
+	fmt.Println(glc.R213([]int{2, 1, 1, 2}))
 }
