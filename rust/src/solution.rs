@@ -1,4 +1,4 @@
-pub mod add_tow_numbers_2;
+pub mod add_two_numbers_2;
 pub mod capitalize_the_title_2129;
 pub mod config;
 pub mod count_ways_to_group_ovrlapping_ranges_2580;
