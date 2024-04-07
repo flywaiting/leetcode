@@ -1,8 +1,10 @@
 pub mod add_two_numbers_2;
+pub mod all_ancestors_of_a_node_in_a_directed_acyclic_graph_2192;
 pub mod capitalize_the_title_2129;
 pub mod config;
 pub mod count_ways_to_group_ovrlapping_ranges_2580;
 pub mod faulty_keyboard_2810;
+pub mod merge_two_sorted_lists_21;
 pub mod minimum_number_of_coins_to_be_added_2952;
 pub mod minimum_sum_of_mountain_triplets_i_2908;
 pub mod two_sum_1;
