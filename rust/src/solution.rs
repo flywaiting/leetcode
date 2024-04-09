@@ -5,6 +5,7 @@ pub mod config;
 pub mod convert_binary_number_in_a_linked_list_to_integer_1290;
 pub mod count_ways_to_group_ovrlapping_ranges_2580;
 pub mod faulty_keyboard_2810;
+pub mod maximum_count_of_positive_integer_and_negative_integer_2529;
 pub mod merge_two_sorted_lists_21;
 pub mod minimum_number_of_coins_to_be_added_2952;
 pub mod minimum_sum_of_mountain_triplets_i_2908;
