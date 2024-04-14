@@ -10,6 +10,7 @@ pub mod merge_two_sorted_lists_21;
 pub mod minimum_number_of_coins_to_be_added_2952;
 pub mod minimum_sum_of_mountain_triplets_i_2908;
 pub mod palindrome_linked_list_234;
+pub mod remove_duplicate_node_lcci_0201;
 pub mod remove_duplicates_from_sorted_list_83;
 pub mod two_sum_1;
 pub mod verify_preorder_serialization_of_a_binary_tree_331;
