@@ -4,6 +4,7 @@ pub mod capitalize_the_title_2129;
 pub mod config;
 pub mod convert_binary_number_in_a_linked_list_to_integer_1290;
 pub mod count_ways_to_group_ovrlapping_ranges_2580;
+pub mod design_hashmap_706;
 pub mod design_hashset_705;
 pub mod faulty_keyboard_2810;
 pub mod maximum_count_of_positive_integer_and_negative_integer_2529;
