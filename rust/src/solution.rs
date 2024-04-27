@@ -7,6 +7,7 @@ pub mod count_ways_to_group_ovrlapping_ranges_2580;
 pub mod design_hashmap_706;
 pub mod design_hashset_705;
 pub mod faulty_keyboard_2810;
+pub mod find_the_width_of_columns_of_a_grid_2639;
 pub mod maximum_count_of_positive_integer_and_negative_integer_2529;
 pub mod merge_in_between_linked_lists_1669;
 pub mod merge_two_sorted_lists_21;
