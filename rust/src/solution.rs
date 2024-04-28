@@ -15,6 +15,7 @@ pub mod middle_of_the_linked_list_876;
 pub mod minimum_number_of_coins_to_be_added_2952;
 pub mod minimum_sum_of_mountain_triplets_i_2908;
 pub mod palindrome_linked_list_234;
+pub mod partition_list_86;
 pub mod remove_duplicate_node_lcci_0201;
 pub mod remove_duplicates_from_sorted_list_83;
 pub mod remove_duplicates_from_sorted_list_ii_82;
