@@ -3,6 +3,7 @@ pub mod all_ancestors_of_a_node_in_a_directed_acyclic_graph_2192;
 pub mod capitalize_the_title_2129;
 pub mod config;
 pub mod convert_binary_number_in_a_linked_list_to_integer_1290;
+pub mod convert_sorted_list_to_binary_search_tree_109;
 pub mod count_ways_to_group_ovrlapping_ranges_2580;
 pub mod design_hashmap_706;
 pub mod design_hashset_705;
