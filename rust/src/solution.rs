@@ -37,6 +37,7 @@ pub mod reverse_linked_list_206;
 pub mod reverse_linked_list_ii_92;
 pub mod rotate_list_61;
 pub mod sort_list_148;
+pub mod split_linked_list_in_parts_725;
 pub mod swap_nodes_in_pairs_24;
 pub mod two_sum_1;
 pub mod verify_preorder_serialization_of_a_binary_tree_331;
