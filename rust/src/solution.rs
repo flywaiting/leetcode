@@ -11,6 +11,7 @@ pub mod count_ways_to_group_ovrlapping_ranges_2580;
 pub mod defuse_the_bomb_1652;
 pub mod design_hashmap_706;
 pub mod design_hashset_705;
+pub mod distribute_candies_to_people_1103;
 pub mod faulty_keyboard_2810;
 pub mod find_the_width_of_columns_of_a_grid_2639;
 pub mod flatten_binary_tree_to_linked_list_114;
